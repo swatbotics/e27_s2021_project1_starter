@@ -39,10 +39,10 @@ def main():
     ##################################################
     # compute output size
 
-    frac = 640.0/width
+    frac = 640.0/max(width, height)
 
     if frac >= 1.0:
-        print('width already <= 640, not resizing!')
+        print('max dimension already <= 640, not resizing!')
         sys.exit(1)
 
     output_size = (int(round(width*frac)), int(round(height*frac)))
